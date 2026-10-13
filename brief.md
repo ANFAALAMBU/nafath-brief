@@ -55,3 +55,5 @@ Source: https://www.rfc-editor.org/rfc/rfc6811.html
 
 ## Open Question
 How can network operators detect and respond to BGP path manipulation attacks that are not detected by RPKI origin validation?
+
+For the Networking track, understanding BGP route hijacking and the role and limitations of RPKI is essential to protecting internet routing.
