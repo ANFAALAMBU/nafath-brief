@@ -19,11 +19,35 @@ Security controls for evaluating mobile applications on platforms like iOS and A
 ‏Source: https://mas.owasp.org/MASVS/
 
 ## Networking
+Border Gateway Protocol (BGP) allows networks to announce routes that help direct internet traffic between autonomous systems. BGP route hijacking occurs when a network incorrectly or maliciously announces that it can reach an IP address prefix it does not legitimately control. Other networks may accept the announcement and redirect traffic through an unintended path, potentially causing interception, disruption, or service outages.
 
+Resource Public Key Infrastructure (RPKI) helps reduce this risk through Route Origin Authorizations (ROAs), which identify the autonomous systems authorized to originate particular IP prefixes. Routers can perform Route Origin Validation to classify announcements as valid, invalid, or not found. Network operators can then configure routing policies to reject invalid routes.
+
+However, RPKI origin validation does not validate the entire AS path or prevent every form of traffic interception. It cannot by itself prevent all routing attacks, including attacks involving a legitimate origin AS or malicious behavior elsewhere along the route. Therefore, RPKI should be combined with careful BGP filtering, monitoring, and other routing security practices.
+
+Sources:
+* https://www.rfc-editor.org/rfc/rfc6811.html
+* https://www.ripe.net/manage-ips-and-asns/resource-management/rpki/
 
 ## Cybersecurity
+Log4Shell (CVE-2021-44228) is a critical remote code execution vulnerability discovered in Apache Log4j 2, a widely used Java logging library. In affected configurations, an attacker could cause a vulnerable application to process a specially crafted input that triggers a JNDI lookup, potentially allowing unauthorized code execution. The vulnerability can expose systems to serious risks, including compromise of application servers and sensitive data.
+
+Organizations should identify applications and services that use vulnerable Log4j versions, upgrade affected components to fixed versions recommended by Apache, and verify that the updates have been applied throughout their software supply chain. Temporary mitigations may be necessary when immediate upgrades are not possible, but they should not replace proper patching. Teams should also review relevant logs, investigate signs of compromise, and maintain an inventory of software dependencies to improve future vulnerability response.
+
+Sources:
+* https://logging.apache.org/log4j/2.x/security.html
+* https://nvd.nist.gov/vuln/detail/CVE-2021-44228
 
 ## Data
+## Data
+
+A Software Bill of Materials (SBOM) is a formal record of the software components included in an application or product. It helps organizations understand their software dependencies, identify potentially vulnerable components, and respond more effectively when security issues are discovered. An SBOM should include the supplier name, component name, component version, other unique identifiers where available, dependency relationships, the SBOM author, and the timestamp of creation. It may also include license information and references to component hashes or other useful identifiers. The NTIA minimum elements provide a widely recognized baseline for SBOM content, while SPDX and CycloneDX provide established formats for representing software component information. SBOMs are most useful when they are accurate, maintained as software changes, and integrated into vulnerability management and software supply chain security processes.
+
+Sources:
+* https://www.ntia.gov/report/2021/minimum-elements-software-bill-materials-sbom
+* https://spdx.dev/
+* https://cyclonedx.org/
+
 
 ## Misconception in My Track
 
