@@ -39,8 +39,6 @@ Sources:
 * https://nvd.nist.gov/vuln/detail/CVE-2021-44228
 
 ## Data
-## Data
-
 A Software Bill of Materials (SBOM) is a formal record of the software components included in an application or product. It helps organizations understand their software dependencies, identify potentially vulnerable components, and respond more effectively when security issues are discovered. An SBOM should include the supplier name, component name, component version, other unique identifiers where available, dependency relationships, the SBOM author, and the timestamp of creation. It may also include license information and references to component hashes or other useful identifiers. The NTIA minimum elements provide a widely recognized baseline for SBOM content, while SPDX and CycloneDX provide established formats for representing software component information. SBOMs are most useful when they are accurate, maintained as software changes, and integrated into vulnerability management and software supply chain security processes.
 
 Sources:
