@@ -48,5 +48,10 @@ Sources:
 
 
 ## Misconception in My Track
+A common misconception is that RPKI completely prevents BGP route hijacking. In reality, RPKI Route Origin Validation checks whether an autonomous system is authorized to originate a particular IP prefix. It does not validate the entire AS path or guarantee that traffic follows a safe route. For example, a route can have a valid origin but still be involved in an attack that manipulates the path. Therefore, RPKI is an important security measure, but it must be combined with appropriate BGP filtering, routing monitoring, and other operational security practices.
+
+Evidence: RFC 6811, Section 2, Route Origin Validation.
+Source: https://www.rfc-editor.org/rfc/rfc6811.html
 
 ## Open Question
+How can network operators detect and respond to BGP path manipulation attacks that are not detected by RPKI origin validation?
